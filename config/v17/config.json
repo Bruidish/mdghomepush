@@ -1,0 +1,37 @@
+{
+    "hooks": [
+        "actionFrontControllerSetMedia",
+        "displayContentWrapperTop",
+        "displayWrapperTop",
+        "displayTopColumn",
+        "displayHome"
+    ],
+
+    "tabs": [
+        {"tab_name": "Mdg Thème", "module_name": "mdgmodule", "class_name": "AdminMdgModules", "removeOnUninstall": true},
+        {"tab_name": "Home : Slides", "module_name": "mdghomepush", "class_name": "AdminSlide", "parent_class_name": "AdminMdgModules", "icon": "bubble_chart", "removeOnUninstall": true},
+        {"tab_name": "Home : Pushes", "module_name": "mdghomepush", "class_name": "AdminPush", "parent_class_name": "AdminMdgModules", "icon": "bubble_chart", "removeOnUninstall": true}
+    ],
+
+    "models": [
+        {"className": "mdg\\homepush\\Models\\PushModel", "removeOnUninstall": true},
+        {"className": "mdg\\homepush\\Models\\SlideModel", "removeOnUninstall": true}
+    ],
+
+    "fields": [
+
+    ],
+
+    "configurations": [
+        {"name": "MDG_HOMESLIDE_FULLSCREEN", "value": true, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_HEIGHT", "value": 480, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_BREAK", "value": 0, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_TANSITION", "value": 300, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_AXE", "value": 0, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_IMGWIDTH", "value": 2560, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_IMGHEIGHT", "value": 520, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMEPUSH_HEIGHT", "value": 390, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMEPUSH_IMGWIDTH", "value": "", "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMEPUSH_IMGHEIGHT", "value": 320, "lang": false, "removeOnUninstall": true }
+    ]
+}

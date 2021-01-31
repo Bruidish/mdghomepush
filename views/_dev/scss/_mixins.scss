@@ -1,0 +1,31 @@
+/**
+ * @author Michel Dumont <michel.dumont.io>
+ * @version 1.0.0 - 2021-01-28
+ * @copyright 2021
+ * @license http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @package prestashop 1.6 - 1.7
+ */
+
+ @mixin position($position) {
+    @if($position == sticky) {
+        position: -webkit-sticky;
+        position: sticky;
+    } @else {
+        position: $position;
+    }
+}
+
+@mixin breakPoint($breakpoint, $minMax: max-width) {
+    @if $breakpoint == 'xs' {
+        @media ($minMax: 575.98px) {@content;}
+    }
+    @else if $breakpoint == 'sm' {
+        @media ($minMax: 767.98px) {@content;}
+    }
+    @else if $breakpoint == 'md' {
+        @media ($minMax: 991.98px) {@content;}
+    }
+    @else if $breakpoint == 'lg' {
+        @media ($minMax: 1199.98px) {@content;}
+    }
+}

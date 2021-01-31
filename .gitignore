@@ -1,0 +1,10 @@
+.DS_Store
+#config PS
+/config_*.xml
+#override
+/src/override/*.php
+!/src/override/index.php
+#_dev
+/views/_dev/.sass-cache/*
+/views/_dev/node_modules/*
+/views/_dev/package-lock.json
