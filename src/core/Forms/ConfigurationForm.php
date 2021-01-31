@@ -67,7 +67,7 @@ class ConfigurationForm extends \mdg\homepush\Forms\ObjectForm
                         'type' => 'text',
                         'label' => $this->module->l('Container height', $this->form_name),
                         'name' => 'MDG_HOMESLIDE_HEIGHT',
-                        'suffix' => 'px',
+                        'suffix' => 'vh | px | %',
                         'class' => 'fixed-width-xs',
                     ],
                     [

@@ -1,0 +1,21 @@
+/** For Bootstrap tools wish are not always embed in Prestashop theme */
+
+/** @see Bootstrap/utilities/_align.scss */
+.align-baseline    { vertical-align: baseline !important; } // Browser default
+.align-top         { vertical-align: top !important; }
+.align-middle      { vertical-align: middle !important; }
+.align-bottom      { vertical-align: bottom !important; }
+.align-text-bottom { vertical-align: text-bottom !important; }
+.align-text-top    { vertical-align: text-top !important; }
+
+/** @see Bootstrap/utilities/_text.scss */
+.text-justify  { text-align: justify !important; }
+.text-wrap     { white-space: normal !important; }
+.text-nowrap   { white-space: nowrap !important; }
+.text-left     { text-align: left !important; }
+.text-right    { text-align: right !important; }
+.text-center   { text-align: center !important; }
+
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }

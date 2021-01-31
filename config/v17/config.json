@@ -24,14 +24,14 @@
 
     "configurations": [
         {"name": "MDG_HOMESLIDE_FULLSCREEN", "value": true, "lang": false, "removeOnUninstall": true },
-        {"name": "MDG_HOMESLIDE_HEIGHT", "value": 480, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_HEIGHT", "value": "60vh", "lang": false, "removeOnUninstall": true },
         {"name": "MDG_HOMESLIDE_BREAK", "value": 0, "lang": false, "removeOnUninstall": true },
-        {"name": "MDG_HOMESLIDE_TANSITION", "value": 300, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_TANSITION", "value": 600, "lang": false, "removeOnUninstall": true },
         {"name": "MDG_HOMESLIDE_AXE", "value": 0, "lang": false, "removeOnUninstall": true },
-        {"name": "MDG_HOMESLIDE_IMGWIDTH", "value": 2560, "lang": false, "removeOnUninstall": true },
-        {"name": "MDG_HOMESLIDE_IMGHEIGHT", "value": 520, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_IMGWIDTH", "value": 1920, "lang": false, "removeOnUninstall": true },
+        {"name": "MDG_HOMESLIDE_IMGHEIGHT", "value": 840, "lang": false, "removeOnUninstall": true },
         {"name": "MDG_HOMEPUSH_HEIGHT", "value": 390, "lang": false, "removeOnUninstall": true },
         {"name": "MDG_HOMEPUSH_IMGWIDTH", "value": "", "lang": false, "removeOnUninstall": true },
-        {"name": "MDG_HOMEPUSH_IMGHEIGHT", "value": 320, "lang": false, "removeOnUninstall": true }
+        {"name": "MDG_HOMEPUSH_IMGHEIGHT", "value": 560, "lang": false, "removeOnUninstall": true }
     ]
 }

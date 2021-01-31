@@ -115,8 +115,8 @@ class SlideModel extends \mdg\homepush\Models\ObjectModel
     {
         $output = static::IMAGES_NAMES;
         foreach ($output as &$params) {
-            $params['width'] = \Configuration::get('MDG_HOMEPUSH_IMGWIDTH', null, null, null, $params['width']);
-            $params['height'] = \Configuration::get('MDG_HOMEPUSH_IMGHEIGHT', null, null, null, $params['height']);
+            $params['width'] = \Configuration::get('MDG_HOMESLIDE_IMGWIDTH', null, null, null, $params['width']);
+            $params['height'] = \Configuration::get('MDG_HOMESLIDE_IMGHEIGHT', null, null, null, $params['height']);
         }
 
         return $output;

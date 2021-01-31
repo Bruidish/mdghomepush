@@ -56,7 +56,7 @@ trait HookTrait
             'mdgHomeSlide_break' => (int) \Configuration::get('MDG_HOMESLIDE_BREAK'),
             'mdgHomeSlide_transition' => (int) \Configuration::get('MDG_HOMESLIDE_TANSITION'),
             'mdgHomeSlide_axe' => (int) \Configuration::get('MDG_HOMESLIDE_AXE'),
-            'mdgHomeSlide_height' => (int) \Configuration::get('MDG_HOMESLIDE_HEIGHT'),
+            'mdgHomeSlide_height' => \Configuration::get('MDG_HOMESLIDE_HEIGHT'),
         ]);
         $this->context->controller->registerStylesheet("module-{$this->name}-splidecore-css", "modules/{$this->name}/views/libs/splide/css/splide-core.min.css");
         $this->context->controller->registerStylesheet("module-{$this->name}-splidetheme-css", "modules/{$this->name}/views/libs/splide/css/themes/splide-default.min.css");
