@@ -3,7 +3,7 @@
  * Gère le formulaire d'un model
  *
  * @author:  Michel Dumont <michel.dumont.io>
- * @version: 1.0.4 - 2021-01-31
+ * @version: 1.0.4 - 2021-03-13
  * @license: http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  * @package: prestashop 1.6 - 1.7
  */
@@ -21,11 +21,11 @@ abstract class ObjectForm
     /** @var object */
     public $module;
 
+    /** @var string nom du controller qui charge le formulaire */
+    public $controller_name;
+
     /** @var string nom du fichier nécessaire pour les traductions */
     public $form_name;
-
-    /** @var string nom du controller chargeant le formulaire */
-    public $controller_name;
 
     /** @var string action du formulaire */
     public $form_action;
@@ -58,12 +58,12 @@ abstract class ObjectForm
      *  Si on est dans le context d'un FormHelper
      *  On renseigne les paramètres grâce à ceux renseignés dans l'adminModuleController
      *
-     * @param string chemin|nonm du fichier qui sert de controller
+     * @param string chemin|nonm du fichier qui instancie cette méthode
      * @param int|object Object::class du formulaire
      *
      * @return void
      */
-    public function constructFormHelper($controllerFile, $object = null)
+    public function constructFormHelper($filePath, $object = null)
     {
         if (is_object($object)) {
             $className = get_class($object);
@@ -78,28 +78,28 @@ abstract class ObjectForm
         }
 
         $this->currentToken = \Tools::getValue('token');
-        $this->currentIndex = "index.php?controller={$controllerFile}";
+        $this->currentIndex = "index.php?controller={$this->controller_name}";
 
-        $this->form_name = basename($controllerFile, '.php');
+        $this->form_name = basename($filePath, '.php');
         $this->form_action = "submit_{$this->form_name}";
     }
 
     /** Renseigne les variables nécessaires
      *  il faut déclarer les paramètres dans le constructeur enfant qui instancie cet objet
      *
-     * @param string chemin|nonm du fichier qui sert de controller
+     * @param string chemin|nonm du fichier qui instancie cette méthode
      * @param string Object::class du formulaire
      * @param int|object
      *
      * @return void
      */
-    public function constructFormBuilder($controllerFile, $className, $object = null)
+    public function constructFormBuilder($filePath, $className, $object = null)
     {
         $this->table = $className::$definition['table'];
         $this->identifier = $className::$definition['primary'];
         $this->object = is_object($object) ? $object : $className::getInstanceByIdObject($object);
 
-        $this->form_name = basename($controllerFile, '.php');
+        $this->form_name = basename($filePath, '.php');
         $this->form_action = "submit_{$this->form_name}";
     }
 
