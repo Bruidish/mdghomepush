@@ -61,6 +61,39 @@
             position: relative;
             overflow: hidden;
             border: 15px solid transparent;
+            &::before {
+                z-index: 1;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #908f8f;
+            }
+            &::after {
+                z-index: 2;
+                content: '';
+                height: 60px;
+                width: 60px;
+                background: url(./img/loading-elipse.gif) no-repeat center;
+                background-size: contain;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -30px;
+                margin-left: -30px;
+            }
+            &.initialized {
+                &::before {
+                    @include transition(opacity .3s ease-in-out);
+                    opacity: 0;
+                }
+                &::after {
+                    display: none;
+                }
+            }
             img {
                 position: absolute;
                 top: 50%;

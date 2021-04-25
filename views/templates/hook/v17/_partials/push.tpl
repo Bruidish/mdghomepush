@@ -9,9 +9,9 @@
 {if $element}
     <li {if $element->html_id}id="{$element->html_id}"{/if} class="mdghome-push col-12 {$element->html_class} {if $element->image_hover}hasImgHover{/if}">
         {if $element->link}<a href="{$element->link}" {if $element->link_target == 1}target="_blank"{/if}>{else}<div>{/if}
-        <img src="{$element->image}" alt="{$element->title|escape:'quotes'}" />
+        <img data-ismain="true" data-src="{$element->image}" alt="{$element->title|escape:'quotes'}" />
         {if $element->image_hover}
-            <img src="{$element->image_hover}" alt="{$element->title|escape:'quotes'}" />
+            <img data-src="{$element->image_hover}" alt="{$element->title|escape:'quotes'}" />
         {/if}
         <div class="mdghome-push-caption m-1" {if $element->color_text}style="color: {$element->color_text}"{/if}>
             <div class="p-2">
