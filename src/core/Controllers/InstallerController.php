@@ -1,7 +1,9 @@
 <?php
 /**
- * @author  Michel Dumont <https://michel.dumont.io>
- * @version 1.0.7 [2021-01-26] [Michel Dumont]
+ * @author Michel Dumont <https://michel.dumont.io>
+ * @version 1.0.8 [2021-06-22] [Michel Dumont]
+ * @copyright 2020
+ * @license http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  * @package prestashop 1.6 - 1.7
  */
 
@@ -148,8 +150,18 @@ class InstallerController
                 foreach ($model::$definition['associations'] as $association) {
                     $associationSql = "CREATE TABLE IF NOT EXISTS " . _DB_PREFIX_ . $association['association'] . " (";
                     $associationSql .= "{$model::$definition['primary']} INT(11) UNSIGNED NOT NULL, ";
-                    $associationSql .= "{$association['field']} INT(11) UNSIGNED NOT NULL, ";
-                    $associationSql .= "PRIMARY KEY (`{$model::$definition['primary']}`, `{$association['field']}`) ) ENGINE=" . _MYSQL_ENGINE_ . " DEFAULT CHARSET=utf8;";
+                    if (isset($association['field'])) {
+                        $associationSql .= "{$association['field']} INT(11) UNSIGNED NOT NULL, ";
+                        $associationSql .= "PRIMARY KEY (`{$model::$definition['primary']}`, `{$association['field']}`) ) ";
+                    } else if (isset($association['fields'])) {
+                        $primaryKeySql = "`{$model::$definition['primary']}`";
+                        foreach ($association['fields'] as $field) {
+                            $associationSql .= "{$field} INT(11) UNSIGNED NOT NULL, ";
+                            $primaryKeySql .= ",`{$field}`";
+                        }
+                        $associationSql .= "PRIMARY KEY ({$primaryKeySql}) ) ";
+                    }
+                    $associationSql .= "ENGINE=" . _MYSQL_ENGINE_ . " DEFAULT CHARSET=utf8;";
                     $output &= \Db::getInstance()->Execute($associationSql);
                 }
             }
